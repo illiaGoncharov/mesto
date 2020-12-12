@@ -4,6 +4,9 @@
   padding-top: 40px;
   padding-bottom: 50px;
   height: 120px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 @media (max-width: 1024px) {

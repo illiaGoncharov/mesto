@@ -4,23 +4,35 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Mesto Russia</title>
-	<link rel="stylesheet" href="/pages/index.css">
+	<link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="body">
 	<div class="page">
     <header class="header">
-      <a href="/index.html">
+      <a href="./index.html">
         <img src="./images/header-logo.svg" alt="Логотип" class="header__logo">
       </a>
     </header>
     <main class="main">
       <section class="profile">
-        <div class="profile__img-container"></div>
-        <div class="profile__info-container"></div>
+        <div class="profile__img-container">
+          <img src="./images/profile-pic.jpg" alt="Аватор профиля" class="profile__img">
+        </div>
+        <div class="profile__info-container">
+          <h1 class="profile__title">Жак-Ив Кусто</h1>
+          <button class="profile__edit-button"></button>
+          <h2 class="profile__subtitle">Исследователь океана</h2>
+        </div>
         <button class="profile__button"></button>
       </section>
-      <section class="elements">
-        <div class="element"></div>
+      <section class="place-cards">
+        <!-- <div class="place-card">
+          <div class="place-card__image"></div>
+          <div class="place-card__caption">
+            <h3 class="place-card__title"></h3>
+            <button class="place-card__like-icon"></button>
+          </div>
+        </div> -->
       </section>
     </main>
     <footer class="footer"></footer>

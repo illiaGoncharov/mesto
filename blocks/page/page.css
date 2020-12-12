@@ -5,6 +5,7 @@
   height: auto;
 	margin: 0 auto;
 	font-family: 'Inter', 'Arial', sans-serif;
+  font-size: 18px;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

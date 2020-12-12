@@ -7,5 +7,12 @@
 @import url(/blocks/header/header.css);
 
 @import url(/blocks/profile/profile.css);
+@import url(/blocks/profile/__img-container/profile__img-container.css);
+@import url(/blocks/profile/__img/profile__img.css);
+@import url(/blocks/profile/__info-container/profile__info-container.css);
+@import url(/blocks/profile/__title/profile__title.css);
+@import url(/blocks/profile/__edit-button/profile__edit-button.css);
+@import url(/blocks/profile/__subtitle/profile__subtitle.css);
+@import url(/blocks/profile/__button/profile__button.css);
 
 

@@ -1,9 +1,9 @@
 plan
 
-[] = git add . && git commit -m "header"
+[] = git add . && git commit -m ""
 
 --- layout
-- header + profile
+-
 
 
 
@@ -11,5 +11,5 @@ plan
 done
 + initail + basic file structure & files [normalize, fonts, css structure]
 + html layout
-
++ header + profile basic
 
