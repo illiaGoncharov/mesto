@@ -17,3 +17,10 @@
 .profile__button:focus {
    outline: none;
 }
+
+@media (max-width: 710px) {
+  .profile__button  {
+    width: 100%;
+    max-width: 320px;
+  }
+}

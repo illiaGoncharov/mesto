@@ -6,11 +6,10 @@
   border-bottom: 1px solid #545454;
 }
 
-@media (max-width: 1024px) {
-
-}
-
-@media (max-width: 768px) {
-
+@media (max-width: 880px) {
+  .header {
+    padding-left: 27px;
+    width: calc(100% - 27px);
+  }
 }
 

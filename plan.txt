@@ -3,7 +3,7 @@ plan
 [] = git add . && git commit -m ""
 
 --- layout
-- place-cards basic
+-
 
 
 
@@ -13,4 +13,5 @@ done
 + html layout
 + header + profile basic
 + header + profile [desktop]
++ place-cards basic + footer
 

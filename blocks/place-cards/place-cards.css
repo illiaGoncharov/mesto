@@ -6,3 +6,27 @@
   column-gap: 17px;
   row-gap: 20px;
 }
+
+@media (max-width: 880px) {
+  .place-cards  {
+    width: auto;
+    height: auto;
+    padding-right: 19px;
+    padding-left: 19px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 710px) {
+  .place-cards  {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 520px) {
+  .place-cards  {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+
