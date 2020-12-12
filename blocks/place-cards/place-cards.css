@@ -1,0 +1,8 @@
+.place-cards {
+  width: 880px;
+  margin: 0px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 282px);
+  column-gap: 17px;
+  row-gap: 20px;
+}
