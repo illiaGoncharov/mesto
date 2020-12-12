@@ -1,14 +1,15 @@
 plan
 
-[] = git add . && git commit -m "html layout "
+[] = git add . && git commit -m "header"
 
---- meta
-- html layout
+--- layout
+- header + profile
 
 
 
 
 done
 + initail + basic file structure & files [normalize, fonts, css structure]
++ html layout
 
 
