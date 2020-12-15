@@ -16,7 +16,7 @@
   }
 }
 
-@media (max-width: 710px) {
+@media (max-width: 619px) {
   .profile {
     height: auto;
     flex-direction: column;

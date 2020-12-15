@@ -13,17 +13,11 @@
     height: auto;
     padding-right: 19px;
     padding-left: 19px;
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 710px) {
-  .place-cards  {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media (max-width: 520px) {
+@media (max-width: 619px) {
   .place-cards  {
     grid-template-columns: repeat(1, 1fr);
   }
