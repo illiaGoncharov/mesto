@@ -17,4 +17,5 @@ done
 + header + profile [desktop]
 + place-cards basic + footer
 + feat: mq-s
++ refactror: minor mq-s upd-s
 
