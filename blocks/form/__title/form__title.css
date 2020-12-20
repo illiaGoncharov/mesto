@@ -1,10 +1,8 @@
-.place-card__title {
+.form__title {
   margin: 0;
+  margin-bottom: 54px;
   font-style: normal;
   font-weight: 900;
   font-size: 24px;
   line-height: 29px;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
 }

@@ -8,7 +8,17 @@
 </head>
 <body class="body">
   <div class="popup">
-    <div class="popup__container"></div>
+    <img src="./images/close-button.svg" alt="Закрыть" class="popup__button_close">
+    <div class="popup__container">
+      <form class="form" name="edit-form">
+        <h3 class="form__title">Редактировать профиль</h3>
+        <fieldset class="form__input-container">
+          <input class="form__input" type="text" id="name" name="name" placeholder="Имя" required><br>
+          <input class="form__input" type="text" id="desc" name="desc" placeholder="О себе" required>
+          <button type="submit" class="form__button_submit">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
   </div>
 	<div class="page">
     <header class="header">
@@ -70,7 +80,7 @@
             <img src="./images/card-elbrus.jpg" alt="Карачаевск" class="place-card__image">
           </div>
           <div class="place-card__caption">
-            <h3 class="place-card__title">Гора Эльбрус</h3>
+            <h3 class="place-card__title">Гора Эльбрус Эльбрус Эльбрус</h3>
             <button class="place-card__like-icon"></button>
           </div>
         </div>
@@ -89,5 +99,6 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
+  <script src="./scripts/popup.js"></script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 plan
 
-[] = git add . && git commit -m ""
+[] = git add . && git commit -m "js pop up + close btn + text wrap 4 card titles + form design"
 
---- layout
--
+--- next
+- cleaning
+- footer ref
 
 
 
@@ -18,4 +19,5 @@ done
 + place-cards basic + footer
 + feat: mq-s
 + refactror: minor mq-s upd-s
-
+17.12
++ pop-up markup + basic css structure
