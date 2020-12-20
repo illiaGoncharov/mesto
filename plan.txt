@@ -1,12 +1,10 @@
 plan
 
-[] = git add . && git commit -m "photos + fonts check"
+[] = git add . && git commit -m "photos + fonts check + mobile popup"
 
 --- next
 
-
 notes
-
 
 done
 + initail + basic file structure & files [normalize, fonts, css structure]
