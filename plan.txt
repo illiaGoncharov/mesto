@@ -1,8 +1,9 @@
 plan
 
-[] = git add . && git commit -m "photos + fonts check + mobile popup"
+[] = git add . && git commit -m "br + BEM баги"
 
 --- next
+
 
 notes
 
@@ -11,10 +12,11 @@ done
 + html layout
 + header + profile basic
 + header + profile [desktop]
-+ place-cards basic + footer
++ cards basic + footer
 + feat: mq-s
 + refactror: minor mq-s upd-s
 17.12
 + pop-up markup + basic css structure
 20.12
 + js pop up + close btn + text wrap 4 card titles + form design
++ photos + fonts check + mobile popup

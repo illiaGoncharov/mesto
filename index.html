@@ -8,14 +8,14 @@
 </head>
 <body class="body">
   <div class="popup">
-    <img src="./images/close-button.svg" alt="Закрыть" class="popup__button_close">
+    <img src="./images/close-button.svg" alt="Закрыть" class="popup__close-button">
     <div class="popup__container">
       <form class="form" name="edit-form">
         <h3 class="form__title">Редактировать профиль</h3>
         <fieldset class="form__input-container">
-          <input class="form__input" type="text" id="name" name="name" placeholder="Имя" required><br>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Имя" required>
           <input class="form__input" type="text" id="desc" name="desc" placeholder="О себе" required>
-          <button type="submit" class="form__button_submit">Сохранить</button>
+          <button type="submit" class="form__submit-button">Сохранить</button>
         </fieldset>
       </form>
     </div>
@@ -36,64 +36,64 @@
           <button class="profile__edit-button"></button>
           <h2 class="profile__subtitle">Исследователь океана</h2>
         </div>
-        <button class="profile__button"></button>
+        <button class="profile__button" type="button"></button>
       </section>
-      <section class="place-cards">
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-karachaevsk.jpg" alt="Карачаевск" class="place-card__image">
+      <ul class="cards">
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-karachaevsk.jpg" class="card__image" alt="Карачаевск">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Карачаевск</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Карачаевск</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-elbrus.jpg" alt="Ельбрус" class="place-card__image">
+        </li>
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-elbrus.jpg" class="card__image" alt="Ельбрус">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Гора Эльбрус</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Гора Эльбрус</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-dombay.jpg" alt="Домбай" class="place-card__image">
+        </li>
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-dombay.jpg" class="card__image" alt="Домбай">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Домбай</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Домбай</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-baikal.jpg" alt="Байкал" class="place-card__image">
+        </li>
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-baikal.jpg" class="card__image" alt="Байкал">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Байкал</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Байкал</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-sochi.jpg" alt="Сочи" class="place-card__image">
+        </li>
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-sochi.jpg" class="card__image" alt="Сочи">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Сочи</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Сочи</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-chel.jpg" alt="Челябинск" class="place-card__image">
+        </li>
+        <li class="card">
+          <div class="card__image-сontainer">
+            <img src="./images/card-chel.jpg" class="card__image" alt="Челябинск">
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Челябинск</h3>
-            <button class="place-card__like-icon"></button>
+          <div class="card__caption">
+            <h3 class="card__title">Челябинск</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-      </section>
+        </li>
+      </ul>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
