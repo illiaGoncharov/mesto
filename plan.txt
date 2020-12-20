@@ -1,6 +1,6 @@
 plan
 
-[] = git add . && git commit -m "br + BEM баги"
+[] = git add . && git commit -m ""
 
 --- next
 
@@ -20,3 +20,4 @@ done
 20.12
 + js pop up + close btn + text wrap 4 card titles + form design
 + photos + fonts check + mobile popup
++ br + BEM баги
