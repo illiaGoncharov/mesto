@@ -1,6 +1,6 @@
 plan
 
-[] = git add . && git commit -m ""
+[] = git add . && git commit -m "h-f/minor upd-s"
 
 --- next
   - h-f/
@@ -28,4 +28,6 @@ done
 + h-f/footer__copyright320
 + h-f/popupCloseBtn320
 + h-f/close-buttonMarkup
+
+
 
