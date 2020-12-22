@@ -7,19 +7,6 @@
 	<link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="body">
-  <div class="popup">
-    <button class="popup__close-button" type="button"></button>
-    <div class="popup__container">
-      <h4 class="popup__title">Редактировать профиль</h4>
-      <form class="form" name="edit-form">
-        <fieldset class="form__input-container">
-          <input class="form__input form__input_name" type="text" id="name" name="name" placeholder="Имя" required>
-          <input class="form__input form__input_desc" type="text" id="desc" name="desc" placeholder="О себе" required>
-          <button type="submit" class="form__submit-button">Сохранить</button>
-        </fieldset>
-      </form>
-    </div>
-  </div>
 	<div class="page">
     <header class="header">
       <a target="_self" href="./index.html">
@@ -43,42 +30,42 @@
           <li class="card">
             <img src="./images/card-karachaevsk.jpg" class="card__image" alt="Карачаевск">
             <div class="card__caption">
-              <h3 class="card__title">Карачаевск</h3>
+              <h2 class="card__title">Карачаевск</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img src="./images/card-elbrus.jpg" class="card__image" alt="Ельбрус">
             <div class="card__caption">
-              <h3 class="card__title">Гора Эльбрус</h3>
+              <h2 class="card__title">Гора Эльбрус</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img src="./images/card-dombay.jpg" class="card__image" alt="Домбай">
             <div class="card__caption">
-              <h3 class="card__title">Домбай</h3>
+              <h2 class="card__title">Домбай</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img src="./images/card-baikal.jpg" class="card__image" alt="Байкал">
             <div class="card__caption">
-              <h3 class="card__title">Байкал</h3>
+              <h2 class="card__title">Байкал</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img src="./images/card-sochi.jpg" class="card__image" alt="Сочи">
             <div class="card__caption">
-              <h3 class="card__title">Сочи</h3>
+              <h2 class="card__title">Сочи</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
           <li class="card">
             <img src="./images/card-chel.jpg" class="card__image" alt="Челябинск">
             <div class="card__caption">
-              <h3 class="card__title">Челябинск</h3>
+              <h2 class="card__title">Челябинск</h2>
               <button class="card__like-icon" type="button"></button>
             </div>
           </li>
@@ -89,6 +76,21 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
+  <!-- hidden -->
+  <div class="popup">
+    <button class="popup__close-button" type="button"></button>
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <form class="form" name="edit-form">
+        <fieldset class="form__input-container">
+          <input class="form__input form__input_type_name" type="text" id="name" name="name" placeholder="Имя" required>
+          <input class="form__input form__inputt_type_desc" type="text" id="desc" name="desc" placeholder="О себе" required>
+          <button type="submit" class="form__submit-button">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+  <!-- scripts -->
   <script src="./scripts/popup.js"></script>
 </body>
 </html>

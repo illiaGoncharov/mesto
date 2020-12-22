@@ -2,7 +2,7 @@ plan
 
 [] = git branch && git checkout
 [] = git checkout main && git merge develop && git push origin main
-[] = git add . && git commit -m "h-f/minor bugs"
+[] = git add . && git commit -m "h-f/indexMinors"
 
 --- next
   -
@@ -32,6 +32,7 @@ done
 + h-f/close-buttonMarkup
 + h-f/minor upd-s + h-f/jsBugs
 + h-f/reamMe
-
-
++ h-f/minor bugs
++ h-f/stelesURL
++ h-f/like-iconAdd
 

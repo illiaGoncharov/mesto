@@ -11,8 +11,8 @@ let profT = document.querySelector('.profile__title'),
     profS = document.querySelector('.profile__subtitle');
 
 // inputs
-let nameI = document.querySelector('.form__input_name'),
-    descI = document.querySelector('.form__input_desc');
+let nameI = document.querySelector('.form__input_type_name'),
+    descI = document.querySelector('.form__input_type_desc');
 
 // behavior
 function closePopup() {
