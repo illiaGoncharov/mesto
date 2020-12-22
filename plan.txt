@@ -1,6 +1,6 @@
 plan
 
-[] = git add . && git commit -m "fix: del. bold add 500 + BEM 1. __submit-button + 1. __close-button"
+[] = git add . && git commit -m ""
 
 --- next
   - fix:
@@ -22,3 +22,4 @@ done
 + photos + fonts check + mobile popup
 + br + BEM баги
 + ref: layout upd-s
++ fix: del. bold add 500 + BEM 1. __submit-button + 1. __close-button
