@@ -1,4 +1,4 @@
-.place-card__like-icon {
+.card__like-icon {
   width: 21px;
   background: transparent;
   background-image: url(/images/card-like.svg);
@@ -8,7 +8,7 @@
   background-position: center;
 }
 
-.place-card__like-icon:hover {
+.card__like-icon:hover {
   opacity: .6;
   cursor: pointer;
 }

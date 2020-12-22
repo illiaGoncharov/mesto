@@ -3,7 +3,7 @@ plan
 [] = git add . && git commit -m ""
 
 --- next
-  -
+  - fix:
 
 notes
 

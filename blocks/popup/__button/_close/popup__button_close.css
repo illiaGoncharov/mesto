@@ -1,9 +1,0 @@
-.popup__button_close {
-  height: 40px;
-  width: 40px;
-  position: absolute;
-  right: calc(((100vw - 430px) / 2) - 40px);
-  top: calc(((100vh - 330px) / 2) - 40px);
-  transform: rotate(45deg);
-  cursor: pointer;
-}

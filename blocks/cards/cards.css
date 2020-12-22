@@ -1,4 +1,6 @@
-.place-cards {
+.cards {
+  padding: 0;
+  list-style: none;
   width: 880px;
   margin: 0px auto;
   display: grid;
@@ -8,7 +10,7 @@
 }
 
 @media (max-width: 880px) {
-  .place-cards  {
+  .cards  {
     width: auto;
     height: auto;
     padding-right: 19px;
@@ -18,7 +20,7 @@
 }
 
 @media (max-width: 619px) {
-  .place-cards  {
+  .cards  {
     grid-template-columns: repeat(1, 1fr);
   }
 }

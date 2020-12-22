@@ -5,10 +5,13 @@
   font-size: 14px;
   line-height: 17px;
   border: none;
-  /*opacity: 0.2;*/
   outline: none;
   border-bottom: 1px solid #000000;
   padding-bottom: 13px;
+}
+
+.form__input:nth-child(1) {
+  margin-bottom: 30px;
 }
 
 .form__input::placeholder {

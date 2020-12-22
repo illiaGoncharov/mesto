@@ -3,8 +3,8 @@ let popup = document.querySelector('.popup');
 let form = document.querySelector('.form');
 
 // buttons
-let editB= document.querySelector('.profile__edit-button'),
-    closeB = document.querySelector('.popup__button_close');
+let editB = document.querySelector('.profile__edit-button'),
+    closeB = document.querySelector('.popup__close-button');
 
 // profile desc
 let profT = document.querySelector('.profile__title'),

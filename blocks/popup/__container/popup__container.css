@@ -9,3 +9,12 @@
   top: calc((100vh - 330px) / 2);
   left: calc((100vw - 430px) / 2);
 }
+
+@media (max-width: 619px) {
+  .popup__container {
+    width: 282px;
+    height: auto;
+    left: calc((100vw - 282px) / 2);
+    padding: 25px 22px 25px 22px;
+  }
+}

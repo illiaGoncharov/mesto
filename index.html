@@ -8,92 +8,80 @@
 </head>
 <body class="body">
   <div class="popup">
-    <img src="./images/close-button.svg" alt="Закрыть" class="popup__button_close">
+    <img src="./images/close-button.svg" alt="Закрыть" class="popup__close-button">
     <div class="popup__container">
       <form class="form" name="edit-form">
         <h3 class="form__title">Редактировать профиль</h3>
         <fieldset class="form__input-container">
-          <input class="form__input" type="text" id="name" name="name" placeholder="Имя" required><br>
+          <input class="form__input" type="text" id="name" name="name" placeholder="Имя" required>
           <input class="form__input" type="text" id="desc" name="desc" placeholder="О себе" required>
-          <button type="submit" class="form__button_submit">Сохранить</button>
+          <button type="submit" class="form__submit-button">Сохранить</button>
         </fieldset>
       </form>
     </div>
   </div>
 	<div class="page">
     <header class="header">
-      <a href="./index.html">
+      <a target="_self" href="./index.html">
         <img src="./images/header-logo.svg" alt="Логотип" class="header__logo">
       </a>
     </header>
     <main class="main">
       <section class="profile">
         <div class="profile__img-container">
-          <img src="./images/profile-pic.jpg" alt="Аватор профиля" class="profile__img">
+          <img src="./images/profile-pic.jpg" alt="Автор профиля" class="profile__img">
         </div>
         <div class="profile__info-container">
           <h1 class="profile__title">Жак-Ив Кусто</h1>
           <button class="profile__edit-button"></button>
           <h2 class="profile__subtitle">Исследователь океана</h2>
         </div>
-        <button class="profile__button"></button>
+        <button class="profile__button" type="button"></button>
       </section>
-      <section class="place-cards">
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-karachaevsk.jpg" alt="Карачаевск" class="place-card__image">
+      <ul class="cards">
+        <li class="card">
+          <img src="./images/card-karachaevsk.jpg" class="card__image" alt="Карачаевск">
+          <div class="card__caption">
+            <h3 class="card__title">Карачаевск</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Карачаевск</h3>
-            <button class="place-card__like-icon"></button>
+        </li>
+        <li class="card">
+          <img src="./images/card-elbrus.jpg" class="card__image" alt="Ельбрус">
+          <div class="card__caption">
+            <h3 class="card__title">Гора Эльбрус</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-elbrus.jpg" alt="Карачаевск" class="place-card__image">
+        </li>
+        <li class="card">
+          <img src="./images/card-dombay.jpg" class="card__image" alt="Домбай">
+          <div class="card__caption">
+            <h3 class="card__title">Домбай</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Гора Эльбрус</h3>
-            <button class="place-card__like-icon"></button>
+        </li>
+        <li class="card">
+          <img src="./images/card-baikal.jpg" class="card__image" alt="Байкал">
+          <div class="card__caption">
+            <h3 class="card__title">Байкал</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-dombay.jpg" alt="Карачаевск" class="place-card__image">
+        </li>
+        <li class="card">
+          <img src="./images/card-sochi.jpg" class="card__image" alt="Сочи">
+          <div class="card__caption">
+            <h3 class="card__title">Сочи</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Домбай</h3>
-            <button class="place-card__like-icon"></button>
+        </li>
+        <li class="card">
+          <img src="./images/card-chel.jpg" class="card__image" alt="Челябинск">
+          <div class="card__caption">
+            <h3 class="card__title">Челябинск</h3>
+            <button class="card__like-icon" type="button"></button>
           </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-karachaevsk.jpg" alt="Карачаевск" class="place-card__image">
-          </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Карачаевск</h3>
-            <button class="place-card__like-icon"></button>
-          </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-elbrus.jpg" alt="Карачаевск" class="place-card__image">
-          </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Гора Эльбрус Эльбрус Эльбрус</h3>
-            <button class="place-card__like-icon"></button>
-          </div>
-        </div>
-        <div class="place-card">
-          <div class="place-card__image-сontainer">
-            <img src="./images/card-dombay.jpg" alt="Карачаевск" class="place-card__image">
-          </div>
-          <div class="place-card__caption">
-            <h3 class="place-card__title">Домбай</h3>
-            <button class="place-card__like-icon"></button>
-          </div>
-        </div>
-      </section>
+        </li>
+      </ul>
     </main>
     <footer class="footer">
       <p class="footer__copyright">© 2020 Mesto Russia</p>
