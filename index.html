@@ -7,11 +7,12 @@
 	<link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="body">
-  <div class="popup">
+
+  <div class="popup" id="popup-edit">
     <button class="popup__close-button" type="button"></button>
     <div class="popup__container">
       <h4 class="popup__title">Редактировать профиль</h4>
-      <form class="form" name="edit-form">
+      <form class="form" id="form-edit" name="edit-form">
         <fieldset class="form__input-container">
           <input class="form__input form__input_name" type="text" id="name" name="name" placeholder="Имя" required>
           <input class="form__input form__input_desc" type="text" id="desc" name="desc" placeholder="О себе" required>
@@ -20,6 +21,21 @@
       </form>
     </div>
   </div>
+
+  <div class="popup" id="popup-add">
+    <button class="popup__close-button" type="button"></button>
+    <div class="popup__container">
+      <h4 class="popup__title">Новое место</h3>
+      <form class="form" id="form-add" name="add-form">
+         <fieldset class="form__input-container">
+          <input class="form__input form__input_name" type="text" id="name" name="name" placeholder="Название" required>
+          <input class="form__input form__input_desc" type="text" id="desc" name="desc" placeholder="Ссылка на картинку" required>
+          <button type="submit" class="form__submit-button">Создать</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
 	<div class="page">
     <header class="header">
       <a target="_self" href="./index.html">
@@ -36,52 +52,10 @@
           <button class="profile__edit-button" type="button"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__button" type="button"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section>
         <ul class="cards">
-          <!-- <li class="card">
-            <img src="./images/card-karachaevsk.jpg" class="card__image" alt="Карачаевск">
-            <div class="card__caption">
-              <h3 class="card__title">Карачаевск</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-elbrus.jpg" class="card__image" alt="Ельбрус">
-            <div class="card__caption">
-              <h3 class="card__title">Гора Эльбрус</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-dombay.jpg" class="card__image" alt="Домбай">
-            <div class="card__caption">
-              <h3 class="card__title">Домбай</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-baikal.jpg" class="card__image" alt="Байкал">
-            <div class="card__caption">
-              <h3 class="card__title">Байкал</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-sochi.jpg" class="card__image" alt="Сочи">
-            <div class="card__caption">
-              <h3 class="card__title">Сочи</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li>
-          <li class="card">
-            <img src="./images/card-chel.jpg" class="card__image" alt="Челябинск">
-            <div class="card__caption">
-              <h3 class="card__title">Челябинск</h3>
-              <button class="card__like-icon" type="button"></button>
-            </div>
-          </li> -->
           <template id="card">
             <li class="card">
               <img src="•" class="card__image" alt="•">
@@ -98,7 +72,8 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <script src="./scripts/popup.js"></script>
   <script src="./scripts/cards.js"></script>
+  <script src="./scripts/popup-edit.js"></script>
+  <script src="./scripts/popup-add.js"></script>
 </body>
 </html>

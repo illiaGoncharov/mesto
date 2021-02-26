@@ -1,25 +1,25 @@
 // modals
-let popup = document.querySelector('.popup');
-let form = document.querySelector('.form');
+const popupE = document.querySelector('#popup-edit'),
+      formE = document.querySelector('#form-edit');
 
 // buttons
-let editB = document.querySelector('.profile__edit-button'),
-    closeB = document.querySelector('.popup__close-button');
+const editB = document.querySelector('.profile__edit-button'),
+      closeE = popupE.querySelector('.popup__close-button');
 
 // profile desc
-let profT = document.querySelector('.profile__title'),
-    profS = document.querySelector('.profile__subtitle');
+const profT = document.querySelector('.profile__title'),
+      profS = document.querySelector('.profile__subtitle');
 
 // inputs
-let nameI = document.querySelector('.form__input_name'),
-    descI = document.querySelector('.form__input_desc');
+const nameI = formE.querySelector('.form__input_name'),
+      descI = formE.querySelector('.form__input_desc');
 
 // behavior
 function closePopup() {
-  popup.classList.remove("popup_opened");
+  popupE.classList.remove("popup_opened");
 }
 function openPopup() {
-  popup.classList.add("popup_opened");
+  popupE.classList.add("popup_opened");
   nameI.placeholder = profT.textContent;
   descI.placeholder = profS.textContent;
 }
@@ -39,6 +39,6 @@ function updProfile(e) {
 }
 
 // listen
-closeB.addEventListener('click', closePopup);
+closeE.addEventListener('click', closePopup);
 editB.addEventListener('click', openPopup);
-form.addEventListener('submit', updProfile);
+formE.addEventListener('submit', updProfile);
