@@ -37,4 +37,3 @@ formA.addEventListener('submit', getCard);
 
 // Москва
 // https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
-// test

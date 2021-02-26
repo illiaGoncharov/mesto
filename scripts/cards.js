@@ -26,6 +26,11 @@ const initialCards = [
   }
 ]; 
 
+function delCard(e) {
+  const elt = e.target.closest(".card");
+  elt.remove();
+}
+
 function addCard(name, link) {
   // get template & clone it 
   const template = document.querySelector('#card').content;
@@ -36,11 +41,23 @@ function addCard(name, link) {
   templateNew.querySelector('.card__image').src = link;
   templateNew.querySelector('.card__image').alt = "На картинке изображен регион " + name;
 
+  // like button 
+  const likeB = templateNew.querySelector(".card__like-icon");
+  likeB.addEventListener("click", function () {
+    likeB.classList.toggle("card__like-icon_liked");
+  });
+
+  // delete
+  const delB = templateNew.querySelector(".card__delete-icon");
+  delB.addEventListener("click", delCard);
+
+  // add to document
   document.querySelector('.cards').append(templateNew);
-  // console.log(templateNew);
 }
 
 // init
 for (let i = 0; i < initialCards.length; i++) {
   addCard(initialCards[i].name, initialCards[i].link);
 }
+
+
