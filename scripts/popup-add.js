@@ -22,9 +22,7 @@ function getCard(e) {
   e.stopPropagation();
   const tv = titleI.value;
   const lv = linkI.value;
-  console.log(tv);
-  console.log(lv);
-  if(tv.length <= 1 || lv.length <= 1) {
+  if(tv.length <= 3 || lv.length <= 10) {
     alert('Название региона или ссылка слишком коротки. Уверены, что не допустили ошибку? :)');
   } else {
     addCard(tv, lv);
