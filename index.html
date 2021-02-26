@@ -7,6 +7,38 @@
 	<link rel="stylesheet" href="./pages/index.css">
 </head>
 <body class="body">
+<<<<<<< HEAD
+=======
+
+  <div class="popup" id="popup-edit">
+    <button class="popup__close-button" type="button"></button>
+    <div class="popup__container">
+      <h4 class="popup__title">Редактировать профиль</h4>
+      <form class="form" id="form-edit" name="edit-form">
+        <fieldset class="form__input-container">
+          <input class="form__input form__input_name" type="text" id="name" name="name" placeholder="Имя" required>
+          <input class="form__input form__input_desc" type="text" id="desc" name="desc" placeholder="О себе" required>
+          <button type="submit" class="form__submit-button">Сохранить</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+  <div class="popup" id="popup-add">
+    <button class="popup__close-button" type="button"></button>
+    <div class="popup__container">
+      <h4 class="popup__title">Новое место</h3>
+      <form class="form" id="form-add" name="add-form">
+         <fieldset class="form__input-container">
+          <input class="form__input form__input_name" type="text" id="name" name="name" placeholder="Название" required>
+          <input class="form__input form__input_desc" type="text" id="desc" name="desc" placeholder="Ссылка на картинку" required>
+          <button type="submit" class="form__submit-button">Создать</button>
+        </fieldset>
+      </form>
+    </div>
+  </div>
+
+>>>>>>> develop
 	<div class="page">
     <header class="header">
       <a target="_self" href="./index.html">
@@ -23,10 +55,11 @@
           <button class="profile__edit-button" type="button"></button>
           <p class="profile__subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__button" type="button"></button>
+        <button class="profile__add-button" type="button"></button>
       </section>
       <section>
         <ul class="cards">
+<<<<<<< HEAD
           <!-- <li class="card">
             <img src="./images/card-karachaevsk.jpg" class="card__image" alt="Карачаевск">
             <div class="card__caption">
@@ -69,6 +102,8 @@
               <button class="card__like-icon" type="button"></button>
             </div>
           </li> -->
+=======
+>>>>>>> develop
           <template id="card">
             <li class="card">
               <img src="•" class="card__image" alt="•">
@@ -85,6 +120,7 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
+<<<<<<< HEAD
   <!-- hidden -->
   <div class="popup">
     <button class="popup__close-button" type="button"></button>
@@ -101,6 +137,10 @@
   </div>
   <!-- scripts -->
   <script src="./scripts/popup.js"></script>
+=======
+>>>>>>> develop
   <script src="./scripts/cards.js"></script>
+  <script src="./scripts/popup-edit.js"></script>
+  <script src="./scripts/popup-add.js"></script>
 </body>
 </html>
