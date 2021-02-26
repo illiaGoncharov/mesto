@@ -25,7 +25,7 @@ function getCard(e) {
   console.log(tv);
   console.log(lv);
   if(tv.length <= 1 || lv.length <= 1) {
-    alert('Название региона или сслыка слишком коротки. Уверены, что не допустили ошибку? :)');
+    alert('Название региона или ссылка слишком коротки. Уверены, что не допустили ошибку? :)');
   } else {
     addCard(tv, lv);
     closePopup();
