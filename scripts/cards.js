@@ -52,7 +52,7 @@ function addCard(name, link) {
   delB.addEventListener("click", delCard);
 
   // add to document
-  document.querySelector('.cards').append(templateNew);
+  document.querySelector('.cards').prepend(templateNew);
 }
 
 // init
