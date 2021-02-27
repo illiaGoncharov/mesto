@@ -42,3 +42,4 @@ function updProfile(e) {
 closeE.addEventListener('click', closePopup);
 editB.addEventListener('click', openPopup);
 formE.addEventListener('submit', updProfile);
+
