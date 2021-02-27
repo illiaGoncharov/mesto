@@ -1,4 +1,7 @@
 .popup__img {
-	max-width: 75vw;
-	max-height: 75vh;
+	max-height: inherit;
+	max-width: inherit;
+	object-fit: cover;
+	margin: auto;
+	position: relative;
 }

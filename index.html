@@ -8,7 +8,6 @@
 </head>
 <body class="body">
   <div class="popup popup_type_edit">
-    <button class="popup__close-button" type="button"></button>
     <div class="popup__container">
       <h4 class="popup__title">Редактировать профиль</h4>
       <form class="form form_type_edit" name="edit-form">
@@ -18,10 +17,11 @@
           <button type="submit" class="form__submit-button">Сохранить</button>
         </fieldset>
       </form>
+      <button class="popup__close-button" type="button"></button>
     </div>
   </div>
   <div class="popup popup_type_add">
-    <button class="popup__close-button" type="button"></button>
+   
     <div class="popup__container">
       <h4 class="popup__title">Новое место</h3>
       <form class="form form_type_add" name="add-form">
@@ -31,17 +31,9 @@
           <button type="submit" class="form__submit-button">Создать</button>
         </fieldset>
       </form>
+       <button class="popup__close-button" type="button"></button>
     </div>
   </div>
-
-  <!-- <div class="popup popup-lightbox">
-    <figure class="popup__img-figure">
-      <img class="popup__img" src="#" alt="#">
-      <figcaption class="popup__img-caption"></figcaption>
-      <button class="popup__close-button"></button>
-    </figure>
-  </div> -->
-
 	<div class="page">
     <header class="header">
       <a target="_self" href="./index.html">
@@ -79,7 +71,13 @@
       <p class="footer__copyright">© 2020 Mesto Russia</p>
     </footer>
   </div>
-  <script src="./scripts/cards.js"></script>
+  <div class="popup popup_type_lightbox">
+    <figure class="popup__img-figure">
+      <img class="popup__img" src="#" alt="#">
+      <figcaption class="popup__img-caption"></figcaption>
+      <button class="popup__close-button"></button>
+    </figure>
+  </div>
   <script src="./scripts/popup-s.js"></script>
 </body>
 </html>
