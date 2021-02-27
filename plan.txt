@@ -10,7 +10,7 @@ git config --global user.name "Illia Gocharov"
 git config --global user.email illia.m.goncharov@gmail.com
 
 --- next
-  + git add . && git commit -m "" 
+  + git add . && git commit -m "h-f/auto-test-bugs" 
 
 notes
 - [done] При загрузке на странице должно быть 6 карточек, которые добавит JavaScript
@@ -19,9 +19,10 @@ notes
 - [done] Сделайте так, чтобы карточки можно было лайкать
 - [done] Добавьте карточкам иконку удаления
 - [done] Настройте просмотр фотографий. Пусть открываются нажатием на картинку и закрываются кликом на крестик
-- Сделайте так, чтобы все попапы плавно открывались. Пусть проявляются из прозрачности и уходят в неё при закрытии
+- [done] Сделайте так, чтобы все попапы плавно открывались. Пусть проявляются из прозрачности и уходят в неё при закрытии
 
 done
++ feat/lightbox-for-desk&mob && feat/smooth-op&close
 + h-f/vatriables-conflict && ref/popups-code-to-one
 + feat/cardLike & feat/cardDelete
 + feat/nowAddCard + ref/popupConflict
