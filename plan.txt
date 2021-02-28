@@ -5,12 +5,8 @@ plan
 [] = git checkout main && git merge develop && git push 
 [] = git add . && git commit -m "h-f/indexMinors"
 
-
-git config --global user.name "Illia Gocharov"
-git config --global user.email illia.m.goncharov@gmail.com
-
 --- next
-  + git add . && git commit -m "h-f/auto-test-bugs" 
+  + git add . && git commit -m "" 
 
 notes
 - [done] При загрузке на странице должно быть 6 карточек, которые добавит JavaScript
@@ -22,6 +18,7 @@ notes
 - [done] Сделайте так, чтобы все попапы плавно открывались. Пусть проявляются из прозрачности и уходят в неё при закрытии
 
 done
++ h-f/auto-test-bugs
 + feat/lightbox-for-desk&mob && feat/smooth-op&close
 + h-f/vatriables-conflict && ref/popups-code-to-one
 + feat/cardLike & feat/cardDelete
@@ -30,7 +27,6 @@ done
 + feat/initFirst6Cars
 + h-f/readmeUpd-s
  ↑
----
  ↓
 + initail + basic file structure & files [normalize, fonts, css structure]
 + html layout

@@ -1,71 +1,6 @@
-// initial array
-const initialCards = [
-  {
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]; 
+// Часть правок не до конца понял. Надеюсь, что я приблизился к сути. 
 
-function delCard(e) {
-  const elt = e.target.closest(".card");
-  elt.remove();
-}
-
-function addCard(name, link) {
-  // get template & clone it 
-  const template = document.querySelector('#card').content;
-  let templateNew = template.cloneNode(true);
-
-  // apply vals
-  templateNew.querySelector('.card__title').innerText = name;
-  templateNew.querySelector('.card__image').src = link;
-  templateNew.querySelector('.card__image').alt = "На картинке изображен регион " + name;
-
-  // like button 
-  const likeB = templateNew.querySelector(".card__like-icon");
-  likeB.addEventListener("click", () => {
-    likeB.classList.toggle("card__like-icon_liked");
-  });
-
-  // delete
-  const delB = templateNew.querySelector(".card__delete-icon");
-  delB.addEventListener("click", delCard);
-
-  // lightbox
-  templateNew.querySelector('.card__image').addEventListener('click', () => {
-    openLB(link, name);
-  });
-
-  // add to document
-  document.querySelector('.cards').prepend(templateNew);
-}
-
-// init
-for (let i = 0; i < initialCards.length; i++) {
-  addCard(initialCards[i].name, initialCards[i].link);
-}
-
-// popup behavior
+// behavior [popup]
 function closePopup(target) {
   target.classList.remove("popup_opened");
 }
@@ -77,45 +12,92 @@ const popupList = document.querySelectorAll(".popup");
 
 popupList.forEach((popup) => {
   popup.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("popup_opened")) {
-      closePopup(popup);
-    }
-    if (evt.target.classList.contains("popup__close-button")) {
+    if (evt.target.classList.contains("popup_opened") || evt.target.classList.contains("popup__close-button")) {
       closePopup(popup);
     }
   });
 });
 
-// modals [edit & add]
-const popupE = document.querySelector('.popup_type_edit'),
-      formE = document.querySelector('.form_type_edit'),
-      popupA = document.querySelector('.popup_type_add'),
-      formA = document.querySelector('.form_type_add');
+// delete card
+function deleteCard(e) {
+  e.target.closest(".card").remove();
+}
+// add card
+function perpendCard(target, package) {
+  target.prepend(package);
+}
 
-// buttons [edit & add]
-const editB = document.querySelector('.profile__edit-button'),
-      closeE = popupE.querySelector('.popup__close-button'),
-      addB = document.querySelector('.profile__add-button'),
-      closeA = popupA.querySelector('.popup__close-button');
+// insert card [add]
+function initCard(name, link) {
+  // get template & clone it 
+  const template = document.querySelector('#card').content;
+  const templateNew = template.cloneNode(true);
 
-// get inputs [edit & add]
-const nameI = formE.querySelector('.form__input_type_name'),
-      descI = formE.querySelector('.form__input_type_desc'),
-      titleI = formA.querySelector('.form__input_type_title'),
-      linkI = formA.querySelector('.form__input_type_link');
+  const cardsContainer = document.querySelector('.cards');
 
-// profile desc
-const profT = document.querySelector('.profile__title'),
-      profS = document.querySelector('.profile__subtitle');
+  // apply vals
+  templateNew.querySelector('.card__title').textContent = name;
+  templateNew.querySelector('.card__image').src = link;
+  templateNew.querySelector('.card__image').alt = "На картинке изображен регион " + name;
 
-// main edit  
+  // init like
+  const likeButton = templateNew.querySelector(".card__like-icon");
+  likeButton.addEventListener("click", () => {
+    likeButton.classList.toggle("card__like-icon_liked");
+  });
+
+  // init delete
+  const deleteButton = templateNew.querySelector(".card__delete-icon");
+  deleteButton.addEventListener("click", deleteCard);
+
+  // listen [lightbox]
+  templateNew.querySelector('.card__image').
+  addEventListener('click', () => {
+    openLB(link, name);
+  });
+
+  // gogogo
+  perpendCard(cardsContainer, templateNew);
+}
+
+// modal [lightbox] 
+const popupLB = document.querySelector(".popup_type_lightbox");
+const popupFig = popupLB.querySelector(".popup__img-figure");
+const popupImg = popupFig.querySelector(".popup__img");
+const popupCap = popupFig.querySelector(".popup__img-caption");
+
+// init & open [lightbox]
+function openLB(link, desc) {
+  popupImg.src = link;
+  popupImg.alt = desc;
+  popupCap.textContent = desc;
+  openPopup(popupLB);
+}
+
+// modals [edit]
+const popupE = document.querySelector('.popup_type_edit');
+const formE = document.querySelector('.form_type_edit');
+
+// buttons [edit]
+const editB = document.querySelector('.profile__edit-button');
+const closeE = popupE.querySelector('.popup__close-button');
+
+// get inputs [edit]
+const nameI = formE.querySelector('.form__input_type_name');
+const descI = formE.querySelector('.form__input_type_desc');
+
+// profile desc [edit]
+const profT = document.querySelector('.profile__title');
+const profS = document.querySelector('.profile__subtitle');
+
+// main [edit]  
 function updProfile(e) {
   e.preventDefault();
   e.stopPropagation();
   const nv = nameI.value;
   const dv = descI.value;
   if(nv.length <= 2 || dv.length <= 2) {
-    alert('Имя или описание слишком коротки. Может быть попробовать что-то подлинее? :)');
+    // alert('Имя или описание слишком коротки. Может быть попробовать что-то подлинее? :)');
   } else {
     profT.textContent = nv;
     profS.textContent = dv;
@@ -124,52 +106,52 @@ function updProfile(e) {
 }
 
 // listen edit
-closeE.addEventListener('click', function() {
+closeE.addEventListener('click', () => {
   closePopup(popupE);
 });
-editB.addEventListener('click', function() {
+editB.addEventListener('click', () => {
   nameI.placeholder = profT.textContent;
   descI.placeholder = profS.textContent;
   openPopup(popupE);
 });
 formE.addEventListener('submit', updProfile);
 
-// main add
+// buttons [add]
+const popupA = document.querySelector('.popup_type_add');
+const formA = document.querySelector('.form_type_add');
+
+// buttons [add]
+const addB = document.querySelector('.profile__add-button');
+const closeA = popupA.querySelector('.popup__close-button');
+
+// get inputs [add]
+const titleI = formA.querySelector('.form__input_type_title');
+const linkI = formA.querySelector('.form__input_type_link');
+
+// main [add]
 function getCard(e) {
   e.preventDefault();
   e.stopPropagation();
   const tv = titleI.value;
   const lv = linkI.value;
   if(tv.length <= 2 || lv.length <= 5) {
-    alert('Название региона или ссылка слишком коротки. Уверены, что не допустили ошибку? :)');
+    // alert('Название региона или ссылка слишком коротки. Уверены, что не допустили ошибку? :)');
   } else {
-    addCard(tv, lv);
+    initCard(tv, lv);
     closePopup(popupA);
-    // Москва https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
-  }
+  } 
 }
+// Москва https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
 
 // listen add
-closeA.addEventListener('click', function() {
+closeA.addEventListener('click', () => {
   closePopup(popupA);
 });
-addB.addEventListener('click', function() {
+addB.addEventListener('click', () => {
   openPopup(popupA);
 });
 formA.addEventListener('submit', getCard);
 
-// modal + elements [lightbox] 
-const popupLB = document.querySelector(".popup_type_lightbox"),
-      popupFig = popupLB.querySelector(".popup__img-figure"),
-      popupImg = popupFig.querySelector(".popup__img"),
-      popupCap = popupFig.querySelector(".popup__img-caption");
-
-function openLB(link, desc) {
-  openPopup(popupLB);
-  popupImg.src = link;
-  popupImg.alt = desc;
-  popupCap.textContent = desc;
-}
 
 
 
