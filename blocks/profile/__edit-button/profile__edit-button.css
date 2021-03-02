@@ -3,7 +3,7 @@
   background-image: url(../../../images/edit.svg);
   width: 24px;
   height: 24px;
-  display: inline;
+  display: inline-flex;
   border: none;
   border-radius: 0px;
 }

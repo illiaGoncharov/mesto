@@ -1,4 +1,4 @@
-// initial array
+// initial cards array
 const initialCards = [
   {
     name: 'Архыз',
@@ -26,7 +26,11 @@ const initialCards = [
   }
 ]; 
 
-// init
-for (let i = 0; i < initialCards.length; i++) {
-  initCard(initialCards[i].name, initialCards[i].link);
+// init cards
+function init() {
+  const html = initialCards.map(initCard);
+  cardsContainer.append(...html);
 }
+
+init();
+

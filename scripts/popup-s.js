@@ -1,6 +1,3 @@
-// Часть правок не до конца понял. Надеюсь, что я приблизился к сути. 
-// Не смог воссазадть баг стилей в попапе со скрина. Какой браузер, размер экрана?
-
 // behavior [popup]
 function closePopup(target) {
   target.classList.remove("popup_opened");
@@ -9,6 +6,7 @@ function openPopup(target) {
   target.classList.add("popup_opened");
 }
 
+// 2-nd way to close popoup
 const popupList = document.querySelectorAll(".popup");
 
 popupList.forEach((popup) => {
@@ -19,26 +17,18 @@ popupList.forEach((popup) => {
   });
 });
 
-// delete card
-function deleteCard(e) {
-  e.target.closest(".card").remove();
-}
-// add card
-function perpendCard(target, package) {
-  target.prepend(package);
-}
+// get template 
+const cardsContainer = document.querySelector('.cards');
+const cardsTemplate = document.querySelector('#card');
 
 // insert card [add]
-function initCard(name, link) {
-  // get template & clone it 
-  const template = document.querySelector('#card').content;
-  const templateNew = template.cloneNode(true);
-
-  const cardsContainer = document.querySelector('.cards');
+function initCard(data) {
+  //  clone it 
+  const templateNew = cardsTemplate.content.cloneNode(true);
 
   // apply vals
-  templateNew.querySelector('.card__title').textContent = name;
-  templateNew.querySelector('.card__image').src = link;
+  templateNew.querySelector('.card__title').textContent = data.name;
+  templateNew.querySelector('.card__image').src = data.link;
   templateNew.querySelector('.card__image').alt = "На картинке изображен регион " + name;
 
   // init like
@@ -52,106 +42,106 @@ function initCard(name, link) {
   deleteButton.addEventListener("click", deleteCard);
 
   // listen [lightbox]
-  templateNew.querySelector('.card__image').
-  addEventListener('click', () => {
-    openLB(link, name);
+  templateNew.querySelector('.card__image').addEventListener('click', () => {
+    openLB(data.link, data.name);
   });
 
-  // gogogo
-  perpendCard(cardsContainer, templateNew);
+  return templateNew;
+}
+
+// delete card
+function deleteCard(e) {
+  e.target.closest(".card").remove();
 }
 
 // modal [lightbox] 
-const popupLB = document.querySelector(".popup_type_lightbox");
-const popupFig = popupLB.querySelector(".popup__img-figure");
-const popupImg = popupFig.querySelector(".popup__img");
-const popupCap = popupFig.querySelector(".popup__img-caption");
+const popupLightbox = document.querySelector(".popup_type_lightbox");
+const popupFigure = popupLightbox.querySelector(".popup__img-figure");
+const popupImage = popupFigure.querySelector(".popup__img");
+const popupCaption = popupFigure.querySelector(".popup__img-caption");
 
 // init & open [lightbox]
 function openLB(link, desc) {
-  popupImg.src = link;
-  popupImg.alt = desc;
-  popupCap.textContent = desc;
-  openPopup(popupLB);
+  popupImage.src = link;
+  popupImage.alt = desc;
+  popupCaption.textContent = desc;
+  openPopup(popupLightbox);
 }
 
 // modals [edit]
-const popupE = document.querySelector('.popup_type_edit');
-const formE = document.querySelector('.form_type_edit');
+const popupEditProfile = document.querySelector('.popup_type_edit');
+const formEditProfile = document.querySelector('.form_type_edit');
 
 // buttons [edit]
-const editB = document.querySelector('.profile__edit-button');
-const closeE = popupE.querySelector('.popup__close-button');
+const buttonEditProfile = document.querySelector('.profile__edit-button');
+const closeEditPrifile = popupEditProfile.querySelector('.popup__close-button');
 
 // get inputs [edit]
-const nameI = formE.querySelector('.form__input_type_name');
-const descI = formE.querySelector('.form__input_type_desc');
+const nameInput = formEditProfile.querySelector('.form__input_type_name');
+const descriptionInput = formEditProfile.querySelector('.form__input_type_desc');
 
 // profile desc [edit]
-const profT = document.querySelector('.profile__title');
-const profS = document.querySelector('.profile__subtitle');
+const profileTitle = document.querySelector('.profile__title');
+const profileSubtitle = document.querySelector('.profile__subtitle');
 
 // main [edit]  
-function updProfile(e) {
+function updateProfileInfo(e) {
   e.preventDefault();
   e.stopPropagation();
-  const nv = nameI.value;
-  const dv = descI.value;
-  if(nv.length <= 2 || dv.length <= 2) {
+  const newNameValue = nameInput.value;
+  const newDescriptionValue = descriptionInput.value;
+  if(newNameValue.length <= 2 || newDescriptionValue.length <= 2) {
     // alert('Имя или описание слишком коротки. Может быть попробовать что-то подлинее? :)');
   } else {
-    profT.textContent = nv;
-    profS.textContent = dv;
-    closePopup(popupE);
+    profileTitle.textContent = newNameValue;
+    profileSubtitle.textContent = newDescriptionValue;
+    closePopup(popupEditProfile);
   }
 }
 
 // listen edit
-closeE.addEventListener('click', () => {
-  closePopup(popupE);
+closeEditPrifile.addEventListener('click', () => {
+  closePopup(popupEditProfile);
 });
-editB.addEventListener('click', () => {
-  nameI.placeholder = profT.textContent;
-  descI.placeholder = profS.textContent;
-  openPopup(popupE);
+buttonEditProfile.addEventListener('click', () => {
+  nameInput.placeholder = profileTitle.textContent;
+  descriptionInput.placeholder = profileSubtitle.textContent;
+  openPopup(popupEditProfile);
 });
-formE.addEventListener('submit', updProfile);
+formEditProfile.addEventListener('submit', updateProfileInfo);
 
 // buttons [add]
-const popupA = document.querySelector('.popup_type_add');
-const formA = document.querySelector('.form_type_add');
+const popupAddPlace = document.querySelector('.popup_type_add');
+const formAddPlace = document.querySelector('.form_type_add');
 
 // buttons [add]
-const addB = document.querySelector('.profile__add-button');
-const closeA = popupA.querySelector('.popup__close-button');
+const placeAddButton = document.querySelector('.profile__add-button');
+const closeAddPlace = popupAddPlace.querySelector('.popup__close-button');
 
 // get inputs [add]
-const titleI = formA.querySelector('.form__input_type_title');
-const linkI = formA.querySelector('.form__input_type_link');
+const titleInput = formAddPlace.querySelector('.form__input_type_title');
+const linkInput = formAddPlace.querySelector('.form__input_type_link');
 
 // main [add]
-function getCard(e) {
+function newCard(e) {
   e.preventDefault();
   e.stopPropagation();
-  const tv = titleI.value;
-  const lv = linkI.value;
-  if(tv.length <= 2 || lv.length <= 5) {
-    // alert('Название региона или ссылка слишком коротки. Уверены, что не допустили ошибку? :)');
-  } else {
-    initCard(tv, lv);
-    closePopup(popupA);
-  } 
+  const newCard = initCard({ name: titleInput.value, link: linkInput.value });
+  cardsContainer.prepend(newCard);
+  closePopup(popupAddPlace);
+  titleInput.value = "";
+  linkInput.value = "";
 }
 // Москва https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
 
 // listen add
-closeA.addEventListener('click', () => {
-  closePopup(popupA);
+closeAddPlace.addEventListener('click', () => {
+  closePopup(popupAddPlace);
 });
-addB.addEventListener('click', () => {
-  openPopup(popupA);
+placeAddButton.addEventListener('click', () => {
+  openPopup(popupAddPlace);
 });
-formA.addEventListener('submit', getCard);
+formAddPlace.addEventListener('submit', newCard);
 
 
 
