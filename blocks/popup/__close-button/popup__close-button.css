@@ -5,7 +5,7 @@
   background-size: cover;
   border: 0;
   border-radius: 0px;
-  background-image: url(../../../images/close-button.svg);
+  background-image: url(./../../../images/close-button.svg);
   height: 40px;
   width: 40px;
   position: absolute;
