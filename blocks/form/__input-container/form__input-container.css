@@ -1,7 +1,13 @@
 .form__input-container {
-  border: none;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-block-start: 0;
+    padding-inline-start: 0;
+    padding-inline-end: 0;
+    padding-block-end: 0;
+	border: none;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
 }

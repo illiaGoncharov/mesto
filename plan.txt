@@ -6,18 +6,14 @@ plan
 [] = git add . && git commit -m "h-f/indexMinors"
 
 --- next
-  + git add . && git commit -m "ref/ стили для попапа для других браузеров" 
+  + git add . && git commit -m "ref: удалил лишние обработчики для попапа && minor upd-s && fix: like btn && fix: form__submit bug fixed" && git push
 
 notes
-- [done] При загрузке на странице должно быть 6 карточек, которые добавит JavaScript
-- [done] Добавьте в проект форму добавления новой карточки. Макет найдёте в «Фигме»
-- [done] Сделайте так, чтобы форма открывалась нажатием на кнопку «+» и закрывалась кликом на крестик
-- [done] Сделайте так, чтобы карточки можно было лайкать
-- [done] Добавьте карточкам иконку удаления
-- [done] Настройте просмотр фотографий. Пусть открываются нажатием на картинку и закрываются кликом на крестик
-- [done] Сделайте так, чтобы все попапы плавно открывались. Пусть проявляются из прозрачности и уходят в неё при закрытии
+- 
 
 done
++ ref: убраны сок. в назв. пер. и ф. && ref: init функции && ref: добавление и инициация карточки переработаны в автономные функции
++ ref/ стили для копки попапа [form]
 + h-f/рефактор кода после ревью [порядок & читаемость кода; init & add Card; массив начальных карт по внеш;]
 + h-f/auto-test-bugs
 + feat/lightbox-for-desk&mob && feat/smooth-op&close
@@ -27,8 +23,11 @@ done
 + h-f/bgImagesFix
 + feat/initFirst6Cars
 + h-f/readmeUpd-s
- ↑
- ↓
+
+↑
+*
+↓
+
 + initail + basic file structure & files [normalize, fonts, css structure]
 + html layout
 + header + profile basic

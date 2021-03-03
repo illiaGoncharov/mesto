@@ -1,3 +1,9 @@
+// init cards
+function init(cardArray) {
+  const html = cardArray.map(initCard);
+  cardsContainer.append(...html);
+}
+
 // behavior [popup]
 function closePopup(target) {
   target.classList.remove("popup_opened");
@@ -6,7 +12,7 @@ function openPopup(target) {
   target.classList.add("popup_opened");
 }
 
-// 2-nd way to close popoup
+// close popoup
 const popupList = document.querySelectorAll(".popup");
 
 popupList.forEach((popup) => {
@@ -16,6 +22,11 @@ popupList.forEach((popup) => {
     }
   });
 });
+
+// toggle _liked 
+function handleLikeIcon() {
+  this.classList.toggle("card__like-icon_liked");
+}
 
 // get template 
 const cardsContainer = document.querySelector('.cards');
@@ -33,9 +44,7 @@ function initCard(data) {
 
   // init like
   const likeButton = templateNew.querySelector(".card__like-icon");
-  likeButton.addEventListener("click", () => {
-    likeButton.classList.toggle("card__like-icon_liked");
-  });
+  likeButton.addEventListener("click", handleLikeIcon); 
 
   // init delete
   const deleteButton = templateNew.querySelector(".card__delete-icon");
@@ -43,7 +52,7 @@ function initCard(data) {
 
   // listen [lightbox]
   templateNew.querySelector('.card__image').addEventListener('click', () => {
-    openLB(data.link, data.name);
+    openLightbox(data.link, data.name);
   });
 
   return templateNew;
@@ -61,7 +70,7 @@ const popupImage = popupFigure.querySelector(".popup__img");
 const popupCaption = popupFigure.querySelector(".popup__img-caption");
 
 // init & open [lightbox]
-function openLB(link, desc) {
+function openLightbox(link, desc) {
   popupImage.src = link;
   popupImage.alt = desc;
   popupCaption.textContent = desc;
@@ -100,9 +109,6 @@ function updateProfileInfo(e) {
 }
 
 // listen edit
-closeEditPrifile.addEventListener('click', () => {
-  closePopup(popupEditProfile);
-});
 buttonEditProfile.addEventListener('click', () => {
   nameInput.placeholder = profileTitle.textContent;
   descriptionInput.placeholder = profileSubtitle.textContent;
@@ -135,12 +141,11 @@ function newCard(e) {
 // Москва https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
 
 // listen add
-closeAddPlace.addEventListener('click', () => {
-  closePopup(popupAddPlace);
-});
 placeAddButton.addEventListener('click', () => {
   openPopup(popupAddPlace);
 });
+// я не придумал как вынести начинку обработчика, если мне нужно передать параметр 
+
 formAddPlace.addEventListener('submit', newCard);
 
 

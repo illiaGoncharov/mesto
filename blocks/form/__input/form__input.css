@@ -8,6 +8,7 @@
   outline: none;
   border-bottom: 1px solid #000000;
   padding-bottom: 13px;
+  width: 100%;
 }
 
 .form__input:nth-child(1) {

@@ -26,11 +26,6 @@ const initialCards = [
   }
 ]; 
 
-// init cards
-function init() {
-  const html = initialCards.map(initCard);
-  cardsContainer.append(...html);
-}
+init(initialCards);
 
-init();
 
