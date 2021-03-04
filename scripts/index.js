@@ -96,7 +96,7 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 // main [edit]  
 function updateProfileInfo(e) {
   e.preventDefault();
-  e.stopPropagation();
+  /*e.stopPropagation();*/
   const newNameValue = nameInput.value;
   const newDescriptionValue = descriptionInput.value;
   if(newNameValue.length <= 2 || newDescriptionValue.length <= 2) {
@@ -131,7 +131,7 @@ const linkInput = formAddPlace.querySelector('.form__input_type_link');
 // main [add]
 function newCard(e) {
   e.preventDefault();
-  e.stopPropagation();
+  /*e.stopPropagation();*/
   const newCard = initCard({ name: titleInput.value, link: linkInput.value });
   cardsContainer.prepend(newCard);
   closePopup(popupAddPlace);
