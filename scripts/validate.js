@@ -6,14 +6,14 @@ const validationDOMStrings = {
   formInputError: "form__input_type_error"
 };
 
-function showError(form, input, options) => {};
+function showError(form, input, options) {};
 
-function hideError(form, input, options) => {};
+function hideError(form, input, options) {};
 
-function checkValidity(form, input, options) => {};
+function checkValidity(form, input, options) {};
 
-function toggleButtonState(button, isValid, options) => {};
+function toggleButtonState(button, isValid, options) {};
 
-function setEventListeners(form, options) => {};
+function setEventListeners(form, options) {};
 
-function enableValidation(options) => {};
+function enableValidation(options) {};
