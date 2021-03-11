@@ -6,12 +6,14 @@ plan
 [] = git add . && git commit -m "h-f/indexMinors"
 
 --- next
-  + git add . && git commit -m "fix: form__submit bug fixed +++" && git push
+  + git add . && git commit -m "feat: add validate.js file & link & basic js logic && ref: edit form markup" && git push
 
 notes
 - 
+- ? ref: add close button inside form to <!-- type="reset" -->
 
 done
++ fix: form__submit bug fixed +++
 + fix: form__submit bug fixed ++
 + ref: удалил лишние обработчики для попапа && minor upd-s && fix: like btn && fix: form__submit bug fixed
 + ref: убраны сок. в назв. пер. и ф. && ref: init функции && ref: добавление и инициация карточки переработаны в автономные функции
