@@ -23,6 +23,12 @@ popupList.forEach((popup) => {
   });
 });
 
+document.addEventListener("keydown", (evt) => {
+  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+});
+
 // toggle _liked 
 function handleLikeIcon() {
   this.classList.toggle("card__like-icon_liked");

@@ -12,3 +12,11 @@
 .form__submit-button:hover {
   background: rgba(0, 0, 0, 0.8);
 }
+
+.form__submit-button:disabled {
+  background-color: white;
+  color: black;
+  opacity: 0.2;
+  border: 1px solid black;
+  cursor: default;
+}
