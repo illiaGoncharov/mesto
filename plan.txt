@@ -7,14 +7,15 @@
 
 --- next
 
-+ git add . && git commit -m "fix: git .icloud files fix" && git push
++ git add . && git commit -m "fix: minor fix-es & upd-s" && git push
 
 --- notes
 
 - ref: add close button inside form to <!-- type="reset" -->
 
 --- done
-
++ feat: validation added & markup updated
++ fix: git .icloud files && fix: consloe validate
 + feat: add validate.js file & link & basic js logic && ref: edit form markup
 ↑
 *

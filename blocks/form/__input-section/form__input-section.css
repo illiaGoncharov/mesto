@@ -1,7 +1,7 @@
-.form__input__section {
+.form__input-section {
 	position: relative;
 }
 
-.form__input__section:nth-child(even) {
+.form__input-section:nth-child(even) {
 	margin-top: 30px;
 }

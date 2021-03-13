@@ -1,4 +1,4 @@
-// ODM selectors 
+// DOM selectors 
 const selectors = {
   formContainer: ".form",
   formInput: ".form__input",
@@ -36,19 +36,24 @@ const toggleButtonState = (inputs, button) => {
 
 // set toggles + validity checks 4 inputs
 const setEventListeners = (form, selectors) => {
+	// prevent def avtion on submit
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
 	});
 
+	// get inputs & but-s 
 	const inputs = Array.from(form.querySelectorAll(selectors.formInput));
 	const button = form.querySelector(selectors.formSubmitButton);
 
+	// listen 4 but-s & imputs
 	inputs.forEach((input) => {
 		input.addEventListener("input", () => {
 			checkValidity(form, input, selectors);
 			toggleButtonState(inputs, button);
 		});
 	});
+
+	// init toggle
 	toggleButtonState(inputs, button);
 };
 
@@ -56,7 +61,6 @@ const setEventListeners = (form, selectors) => {
 const enableValidation = (selectors) => {
 	const forms = Array.from(document.querySelectorAll(selectors.formContainer));
 	forms.forEach((form) => {
-
 		setEventListeners(form, selectors);
 	});
 };
