@@ -6,12 +6,12 @@
   line-height: 17px;
   border: none;
   outline: none;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
   padding-bottom: 13px;
   /*padding-top: 30px;*/
   width: 100%;
 }
 
 .form__input::placeholder {
-  color: #000;
+  color: #C4C4C4;
 }
