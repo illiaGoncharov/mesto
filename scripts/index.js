@@ -1,15 +1,24 @@
 // init cards
-function init(cardArray) {
+function renderIntialCards(cardArray) {
   const html = cardArray.map(initCard);
   cardsContainer.append(...html);
 }
 
+// add esc event listener
+function quitOnEscape(evt) {
+  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+};
+
 // behavior [popup]
 function closePopup(target) {
   target.classList.remove("popup_opened");
+  document.removeEventListener("keydown", quitOnEscape)
 }
 function openPopup(target) {
   target.classList.add("popup_opened");
+  document.addEventListener("keydown", quitOnEscape)
 }
 
 // close popoup
@@ -23,12 +32,6 @@ popupList.forEach((popup) => {
   });
 });
 
-document.addEventListener("keydown", (evt) => {
-  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
-    closePopup(document.querySelector(".popup_opened"));
-  }
-});
-
 // toggle _liked 
 function handleLikeIcon() {
   this.classList.toggle("card__like-icon_liked");
@@ -40,13 +43,17 @@ const cardsTemplate = document.querySelector('#card');
 
 // insert card [add]
 function initCard(data) {
+
   //  clone it 
   const templateNew = cardsTemplate.content.cloneNode(true);
 
+  // get image template element
+  const templateNewImage = templateNew.querySelector('.card__image');
+
   // apply vals
   templateNew.querySelector('.card__title').textContent = data.name;
-  templateNew.querySelector('.card__image').src = data.link;
-  templateNew.querySelector('.card__image').alt = "На картинке изображен регион " + name;
+  templateNewImage.src = data.link;
+  templateNewImage.alt = "На картинке изображен регион " + name;
 
   // init like
   const likeButton = templateNew.querySelector(".card__like-icon");
@@ -102,22 +109,17 @@ const profileSubtitle = document.querySelector('.profile__subtitle');
 // main [edit]  
 function updateProfileInfo(e) {
   e.preventDefault();
-  /*e.stopPropagation();*/
   const newNameValue = nameInput.value;
   const newDescriptionValue = descriptionInput.value;
-  if(newNameValue.length <= 2 || newDescriptionValue.length <= 2) {
-    // alert('Имя или описание слишком коротки. Может быть попробовать что-то подлинее? :)');
-  } else {
-    profileTitle.textContent = newNameValue;
-    profileSubtitle.textContent = newDescriptionValue;
-    closePopup(popupEditProfile);
-  }
+  profileTitle.textContent = newNameValue;
+  profileSubtitle.textContent = newDescriptionValue;
+  closePopup(popupEditProfile);
 }
 
 // listen edit
 buttonEditProfile.addEventListener('click', () => {
-  nameInput.placeholder = profileTitle.textContent;
-  descriptionInput.placeholder = profileSubtitle.textContent;
+  nameInput.value = profileTitle.textContent;
+  descriptionInput.value = profileSubtitle.textContent;
   openPopup(popupEditProfile);
 });
 formEditProfile.addEventListener('submit', updateProfileInfo);
@@ -135,7 +137,7 @@ const titleInput = formAddPlace.querySelector('.form__input_type_title');
 const linkInput = formAddPlace.querySelector('.form__input_type_link');
 
 // main [add]
-function newCard(e) {
+function submitAddCardForm(e) {
   e.preventDefault();
   /*e.stopPropagation();*/
   const newCard = initCard({ name: titleInput.value, link: linkInput.value });
@@ -144,15 +146,13 @@ function newCard(e) {
   titleInput.value = "";
   linkInput.value = "";
 }
-// Москва https://www.planete-energies.com/sites/default/files/thumbnails/image/moscou.jpg
 
 // listen add
 placeAddButton.addEventListener('click', () => {
   openPopup(popupAddPlace);
 });
-// я не придумал как вынести начинку обработчика, если мне нужно передать параметр 
 
-formAddPlace.addEventListener('submit', newCard);
+formAddPlace.addEventListener('submit', submitAddCardForm);
 
 
 

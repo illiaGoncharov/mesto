@@ -1,5 +1,5 @@
 // DOM selectors 
-const selectors = {
+const validationConfig = {
   formContainer: ".form",
   formInput: ".form__input",
   formSubmitButton: ".form__submit-button",
@@ -8,24 +8,24 @@ const selectors = {
 };
 
 // show / close error message + styles
-const showError = (form, input, message, selectors) => {
+const showError = (form, input, message, validationConfig) => {
 	const error = form.querySelector(`#${input.id}-error`);
 	error.textContent = message;
-	error.classList.add(selectors.formInputErrorActive);
-	input.classList.add(selectors.formInputNoValid);
+	error.classList.add(validationConfig.formInputErrorActive);
+	input.classList.add(validationConfig.formInputNoValid);
 };
-const hideError = (form, input, selectors) => {
+const hideError = (form, input, validationConfig) => {
 	const error = form.querySelector(`#${input.id}-error`);
 	error.textContent = "";
-	error.classList.remove(selectors.formInputErrorActive);
-	input.classList.remove(selectors.formInputNoValid);
+	error.classList.remove(validationConfig.formInputErrorActive);
+	input.classList.remove(validationConfig.formInputNoValid);
 };
 
 // check + validate inputs
-const checkValidity = (form, input, selectors) => {
+const checkValidity = (form, input, validationConfig) => {
 	const notValid = !input.validity.valid;
 	const message = input.validationMessage;
-	notValid ? showError(form, input, message, selectors) : hideError(form, input, selectors);
+	notValid ? showError(form, input, message, validationConfig) : hideError(form, input, validationConfig);
 };
 
 // check + toggles button states
@@ -35,20 +35,20 @@ const toggleButtonState = (inputs, button) => {
 };
 
 // set toggles + validity checks 4 inputs
-const setEventListeners = (form, selectors) => {
+const setEventListeners = (form, validationConfig) => {
 	// prevent def avtion on submit
 	form.addEventListener("submit", (e) => {
 		e.preventDefault();
 	});
 
 	// get inputs & but-s 
-	const inputs = Array.from(form.querySelectorAll(selectors.formInput));
-	const button = form.querySelector(selectors.formSubmitButton);
+	const inputs = Array.from(form.querySelectorAll(validationConfig.formInput));
+	const button = form.querySelector(validationConfig.formSubmitButton);
 
 	// listen 4 but-s & imputs
 	inputs.forEach((input) => {
 		input.addEventListener("input", () => {
-			checkValidity(form, input, selectors);
+			checkValidity(form, input, validationConfig);
 			toggleButtonState(inputs, button);
 		});
 	});
@@ -58,10 +58,10 @@ const setEventListeners = (form, selectors) => {
 };
 
 // init whole stuff
-const enableValidation = (selectors) => {
-	const forms = Array.from(document.querySelectorAll(selectors.formContainer));
+const enableValidation = (validationConfig) => {
+	const forms = Array.from(document.querySelectorAll(validationConfig.formContainer));
 	forms.forEach((form) => {
-		setEventListeners(form, selectors);
+		setEventListeners(form, validationConfig);
 	});
 };
-enableValidation(selectors);
+enableValidation(validationConfig);

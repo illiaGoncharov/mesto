@@ -26,6 +26,6 @@ const initialCards = [
   }
 ]; 
 
-init(initialCards);
+renderIntialCards(initialCards);
 
 
