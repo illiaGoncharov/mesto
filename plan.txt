@@ -7,14 +7,14 @@
 
 --- next
 
-+ git add . && git commit -m "fix: minor css upd-s" && git push
++ git add . && git commit -m "fix: prevent empty card creation on after first submit" && git push
 
 --- notes
 
 - ref: add close button inside form to <!-- type="reset" -->
 
 --- done
-+ 
++ fix: minor css upd-s
 + ref: readme upd
 + fix: minor fix-es & upd-s +
 + fix: minor fix-es & upd-s

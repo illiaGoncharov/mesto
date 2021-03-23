@@ -36,14 +36,15 @@ const toggleButtonState = (inputs, button) => {
 
 // set toggles + validity checks 4 inputs
 const setEventListeners = (form, validationConfig) => {
-	// prevent def avtion on submit
-	form.addEventListener("submit", (e) => {
-		e.preventDefault();
-	});
-
 	// get inputs & but-s 
 	const inputs = Array.from(form.querySelectorAll(validationConfig.formInput));
 	const button = form.querySelector(validationConfig.formSubmitButton);
+
+	// prevent page reload + empty card creation on after first submit
+	form.addEventListener("submit", (e) => {
+		e.preventDefault();
+		button.setAttribute("disabled", true);
+	});
 
 	// listen 4 but-s & imputs
 	inputs.forEach((input) => {
