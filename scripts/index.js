@@ -16,26 +16,14 @@ initialCards.forEach((item) => {
   cardsContainer.append(newItem);
 });
 
-// 
+// Открыть попап с карточкой [инит в классе Card]
 
-// add esc event listener
-function quitOnEscape(evt) {
-  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
-    closePopup(document.querySelector(".popup_opened"));
-  }
-};
+export const popupLightbox = document.querySelector(".popup_type_lightbox");
+export const popupImage = popupLightbox.querySelector(".popup__img");
+export const popupCaption = popupLightbox.querySelector(".popup__img-caption");
 
-// behavior [popup]
-function closePopup(target) {
-  target.classList.remove("popup_opened");
-  document.removeEventListener("keydown", quitOnEscape)
-}
-function openPopup(target) {
-  target.classList.add("popup_opened");
-  document.addEventListener("keydown", quitOnEscape)
-}
+// Поведение попапа
 
-// close popoup
 const popupList = document.querySelectorAll(".popup");
 
 popupList.forEach((popup) => {
@@ -46,14 +34,25 @@ popupList.forEach((popup) => {
   });
 });
 
-// toggle _liked 
-function handleLikeIcon() {
-  this.classList.toggle("card__like-icon_liked");
+// add esc event listener
+function quitOnEscape(evt) {
+  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
+    closePopup(document.querySelector(".popup_opened"));
+  }
+};
+
+function closePopup(target) {
+  target.classList.remove("popup_opened");
+  document.removeEventListener("keydown", quitOnEscape)
 }
 
-// insert card [add]
-function initCard(data) {
+export function openPopup(target) {
+  target.classList.add("popup_opened");
+  document.addEventListener("keydown", quitOnEscape)
+}
 
+/* // insert card [add]
+function initCard(data) {
   //  clone it 
   const templateNew = cardsTemplate.content.cloneNode(true);
 
@@ -79,26 +78,8 @@ function initCard(data) {
   });
 
   return templateNew;
-}
+} */
 
-// delete card
-function deleteCard(e) {
-  e.target.closest(".card").remove();
-}
-
-// modal [lightbox] 
-const popupLightbox = document.querySelector(".popup_type_lightbox");
-const popupFigure = popupLightbox.querySelector(".popup__img-figure");
-const popupImage = popupFigure.querySelector(".popup__img");
-const popupCaption = popupFigure.querySelector(".popup__img-caption");
-
-// init & open [lightbox]
-function openLightbox(link, desc) {
-  popupImage.src = link;
-  popupImage.alt = desc;
-  popupCaption.textContent = desc;
-  openPopup(popupLightbox);
-}
 
 // modals [edit]
 const popupEditProfile = document.querySelector('.popup_type_edit');
