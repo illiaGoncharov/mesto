@@ -7,13 +7,25 @@
 
 --- next
 
-+ git add . && git commit -m "ref: create Card.js FormVlidation.js" && git push
++ git add . && git commit -m "ref: Card принимает в конструктор данные карты и селектор template-элемента" && git push
 
 --- notes
 
-- ref: add close button inside form to <!-- type="reset" -->
+- ref: содержит приватные методы, которые работают с разметкой (?), устанавливают слушателей событий (?)
+- ref: содержит приватные методы для каждого обработчика (?)
+- ref: содержит один публичный метод, который возвращает полностью работоспособный и наполненный данными элемент карточки
+
+- ref: принимает в конструктор объект настроек с селекторами и классами формы (validationConfig?)
+- ref: принимает вторым параметром элемент той формы, которая валидируется
+- ref: имеет приватные методы, которые обрабатывают форму: проверяют валидность поля, изменяют состояние кнопки сабмита, устанавливают все обработчики
+- ref: имеет один публичный метод enableValidation, который включает валидацию формы && ref: для каждой проверяемой формы создайте экземпляр класса FormValidator
 
 --- done
++ 
++ ref: create Card.js FormVlidation.js
+↑
+*
+↓
 + fix: prevent empty card creation on after first submit
 + fix: minor css upd-s
 + ref: readme upd
@@ -22,9 +34,6 @@
 + feat: validation added & markup updated
 + fix: git .icloud files && fix: consloe validate
 + feat: add validate.js file & link & basic js logic && ref: edit form markup
-↑
-*
-↓
 + fix: form__submit bug fixed +++
 + fix: form__submit bug fixed ++
 + ref: удалил лишние обработчики для попапа && minor upd-s && fix: like btn && fix: form__submit bug fixed

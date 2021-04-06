@@ -1,22 +1,8 @@
-import Card from "./Card.js";
-import { initialCards } from "./init-cards.js";
-// import { validationConfig, FormValidator } from "./FormValidator.js";
-
-// Добавляем каарточки из массива 
-
-const cardsContainer = document.querySelector('.cards');
-
-function createCard(card) {
-  const newCard = new Card(card.name, card.link, "#card")
-  return newCard.generateCard();
-};
-
-initialCards.forEach((item) => {
-  const newItem = createCard(item);
-  cardsContainer.append(newItem);
-});
-
-// 
+// init cards
+function renderIntialCards(cardArray) {
+  const html = cardArray.map(initCard);
+  cardsContainer.append(...html);
+}
 
 // add esc event listener
 function quitOnEscape(evt) {
@@ -50,6 +36,10 @@ popupList.forEach((popup) => {
 function handleLikeIcon() {
   this.classList.toggle("card__like-icon_liked");
 }
+
+// get template 
+const cardsContainer = document.querySelector('.cards');
+const cardsTemplate = document.querySelector('#card');
 
 // insert card [add]
 function initCard(data) {
