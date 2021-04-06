@@ -66,13 +66,6 @@ function updateProfileInfo(e) {
   profileSubtitle.textContent = newDescriptionValue;
   closePopup(popupEditProfile);
 }
-// listen edit
-buttonEditProfile.addEventListener('click', () => {
-  nameInput.value = profileTitle.textContent;
-  descriptionInput.value = profileSubtitle.textContent;
-  openPopup(popupEditProfile);
-});
-formEditProfile.addEventListener('submit', updateProfileInfo);
 
 // «Новое место»
 // modals [add] + buttons [add] + get inputs [add] + main [add]
@@ -90,9 +83,14 @@ function submitAddCardForm(e) {
   linkInput.value = "";
 }
 
-// listen add
+// Слушатели [edit] + [add]
+buttonEditProfile.addEventListener('click', () => {
+  nameInput.value = profileTitle.textContent;
+  descriptionInput.value = profileSubtitle.textContent;
+  openPopup(popupEditProfile);
+});
+formEditProfile.addEventListener('submit', updateProfileInfo);
 placeAddButton.addEventListener('click', () => {
   openPopup(popupAddPlace);
 });
-
 formAddPlace.addEventListener('submit', submitAddCardForm);

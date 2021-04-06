@@ -29,7 +29,7 @@ export default class Card {
 	_openLightbox() {
 		popupImage.src = this._link;
 		popupImage.alt = this._name;
-		popupCaption.textContent = this._title;
+		popupCaption.textContent = this._name;
 		openPopup(popupLightbox);
 	}
 
