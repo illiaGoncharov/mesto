@@ -1,9 +1,8 @@
 # Проект 6: Место
 
 ### Обзор
-
-* [Ссылка на макет в Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
-* [Посмотреть в браузере](https://illiagoncharov.github.io/mesto/)
+* [Браузер](https://illiagoncharov.github.io/mesto/)
+* [Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)
 
 ### Технологии
 
