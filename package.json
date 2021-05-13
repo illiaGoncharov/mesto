@@ -1,0 +1,25 @@
+{
+  "name": "mesto",
+  "version": "1.0.0",
+  "description": "### Обзор * [Браузер](https://illiagoncharov.github.io/mesto/) * [Figma](https://www.figma.com/file/StZjf8HnoeLdiXS7dYrLAh/JavaScript.-Sprint-4)",
+  "main": "index.js",
+  "scripts": {
+    "build": "rm -rf dist && webpack --mode production",
+    "dev": "webpack server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/illiaGoncharov/mesto.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/illiaGoncharov/mesto/issues"
+  },
+  "homepage": "https://github.com/illiaGoncharov/mesto#readme",
+  "devDependencies": {
+    "webpack": "^5.36.1",
+    "webpack-cli": "^4.6.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
