@@ -1,4 +1,11 @@
 import Card from "./Card.js";
+
+import Section from "./Section.js";
+
+import PopupWithImage from "./PopupWithImage.js";
+import PopupWithForm from "./PopupWithForm.js";
+import UserInfo from './UserInfo.js';
+
 import { validationSelectors, FormValidator } from "./FormValidator.js";
 import { initialCards } from "./init-cards.js";
 
@@ -13,25 +20,13 @@ initialCards.forEach((item) => {
   cardsContainer.append(newItem);
 });
 
+
 // Открыть попап с карточкой [инит в классе Card]
 export const popupLightbox = document.querySelector(".popup_type_lightbox");
 export const popupImage = popupLightbox.querySelector(".popup__img");
 export const popupCaption = popupLightbox.querySelector(".popup__img-caption");
 
-// Поведение попапа
-const popupList = document.querySelectorAll(".popup");
-popupList.forEach((popup) => {
-  popup.addEventListener("click", (evt) => {
-    if (evt.target.classList.contains("popup_opened") || evt.target.classList.contains("popup__close-button")) {
-      closePopup(popup);
-    }
-  });
-});
-function quitOnEscape(evt) {
-  if (evt.key == "Escape" && document.querySelector(".popup_opened")) {
-    closePopup(document.querySelector(".popup_opened"));
-  }
-};
+/// ???
 function closePopup(target) {
   target.classList.remove("popup_opened");
   document.removeEventListener("keydown", quitOnEscape)
