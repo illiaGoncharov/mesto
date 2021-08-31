@@ -1,4 +1,4 @@
-import { popupLightbox, popupImage, popupCaption } from '../index.js';
+import { popupLightbox, popupImage, popupCaption, openPopup} from '../index.js';
 
 export default class Card {
 	constructor(name, link, selector) {
@@ -45,11 +45,5 @@ export default class Card {
 		title.textContent = this._name;
 
 		return this._card;
-	}
-
-	tellData() {
-		console.log(this._name);
-		console.log(this._link);
-		console.log(this._selector);
 	}
 }
