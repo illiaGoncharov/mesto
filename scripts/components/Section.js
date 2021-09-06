@@ -1,5 +1,4 @@
-// отвечает за отрисовку элементов на странице & нет своей разметки
-
+// отвечает за отрисовку элементов на странице && нет своей разметки
 export default class Section {
   constructor({items, renderer}, selector) {
   	this._items = items;
