@@ -7,12 +7,13 @@
 
 --- next
 
-+ git add . && git commit -m "ref: Добавил вебпак сборку проекта" && git push
++ git add . && git commit -m "upd: Добавил gh-pages и плагин для деплоя - сборка теперь происходит через ветку gh-pages" && git push
 
 --- notes
 - 
 
 --- done
++ ref: Добавил вебпак сборку проекта
 + git add . && git commit -m "feat: класс PopupWithImage для [отвечает за отрисовку элементов на странице] && класс для popup [который отвечает за открытие и закрытие попапа]" && git push
 + feat: класс для section [отвечает за отрисовку элементов на странице] && класс для popup [который отвечает за открытие и закрытие попапа]
 + ref: minor js clean-up
